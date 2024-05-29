@@ -41,6 +41,7 @@ The XAML file defines the layout of the main application window, including the c
 
 This file contains the core logic for handling user interactions and drawing operations on the canvas. It interfaces with the graph representation defined in `Graph.cs`, `Edge.cs`, and `Node.cs`.
 
+The main functions are:
 - `GraphCanvas_MouseLeftButtonDown`: Determines actions when the left mouse button is pressed, such as selecting nodes, starting to draw nodes, lines, or curves.
 
 - `GraphCanvas_MouseMove`: Updates the position of the object currently being drawn.
