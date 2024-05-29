@@ -33,11 +33,12 @@ To try GraphDrawer, follow these steps:
 
 1. **Download the Repository**
 
-2. **Run the Program**
-    - Navigate to bin/Release/net7.0-windows/ and run GraphDrawer.exe
+2. **Open the Repository**
+    - Open the repository in Visual Studio
 
 2. **Run the program in Visual Studio**
-    - If that didn't work, open the repository in Visual Studio and run the program.
+    - Build the program for Release and then navigate to bin/Release/net7.0-windows/ and run GraphDrawer.exe
+    - Or run the code directly.
 
 ## Application Overview
 
