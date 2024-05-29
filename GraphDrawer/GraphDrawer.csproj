@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\circle.png" />
+    <None Remove="img\eraser.png" />
+    <None Remove="img\line.png" />
+    <None Remove="img\line_weighted.png" />
+    <None Remove="img\straight_line.png" />
+    <None Remove="img\straight_line_weighted.png" />
+    <None Remove="img\undo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\circle.png" />
+    <Resource Include="img\line.png" />
+    <Resource Include="img\line_weighted.png" />
+    <Resource Include="img\straight_line.png" />
+    <Resource Include="img\straight_line_weighted.png" />
+    <Resource Include="img\undo.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,82 @@
+﻿<Window x:Class="GraphDrawingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Graph Drawing App" Height="1000" Width="1500">
+    <Window.Resources>
+        <Style x:Key="ImageButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.8"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Opacity" Value="0.6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top" HorizontalAlignment="Stretch" IsLocked="True">
+            <ToolBar Width="1500" Height="68">
+                <Button Style="{StaticResource ImageButtonStyle}" Name="Undo" Click="UndoButton_Click" Height="40" Width="40" IsEnabled="False">
+                    <Button.Background>
+                        <ImageBrush ImageSource="\img\undo.png"/>
+                    </Button.Background>
+                </Button>
+                <Separator/>
+                <ComboBox Name="colorComboBox" SelectionChanged="ColorComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Black" IsSelected="True"/>
+                    <ComboBoxItem Content="Blue"/>
+                    <ComboBoxItem Content="Red"/>
+                    <ComboBoxItem Content="Green"/>
+                    <ComboBoxItem Content="Yellow"/>
+                    <ComboBoxItem Content="Purple"/>
+                </ComboBox>
+                <Separator/>
+                <ComboBox Name="DrawModeComboBox" SelectionChanged="DrawModeComboBox_SelectionChanged">
+                    <ComboBoxItem Name="Node" IsSelected="True">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\img\circle.png" Width="40" Height="40"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="Straight">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\img\straight_line.png" Width="40" Height="40"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="Straight_Weighted">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\img\straight_line_weighted.png" Width="40" Height="40"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="Follow_Mouse">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\img\line.png" Width="40" Height="40"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="Follow_Mouse_Weighted">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\img\line_weighted.png" Width="40" Height="40"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                </ComboBox>
+                <Separator/>
+                <Button Content="Show Objects" Click="ShowObjectsButton_Click"/>
+                <Separator/>
+                <Button Name="ShortestPath" Content="Shortest Path" Click="ShortestPathButton_Click"/>
+                <Separator/>
+            </ToolBar>
+        </ToolBarTray>
+        <Canvas Name="graphCanvas" Background="White"/>
+    </DockPanel>
+</Window>
