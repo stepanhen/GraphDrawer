@@ -1,1 +1,1 @@
-Read *User_documentation.md* or *Development_documentation.md*
+Read User_documentation.md or Development_documentation.md
